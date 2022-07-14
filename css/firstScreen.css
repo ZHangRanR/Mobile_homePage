@@ -1,0 +1,212 @@
+#firstScreen{
+    width: 100%;
+    /* vh 是 CSS3 新增的尺寸单位，代表的是视口大小 */
+    /* 100 vh 代表的就是 100% 的视口宽度 */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 视频样式 */
+#firstScreen .bgvideo{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    /* 这也是一个 CSS3 新增属性，指定元素的内容应该如何去适应指定的容器的高度和宽度 */
+    /* cover 代表的是保持原有的尺寸比例，但部分内容可能被裁剪 */
+    object-fit: cover;
+    /* CSS3 新增属性，代表不允许用户选择 */
+    user-select: none;
+}
+
+/* logo 样式 */
+#firstScreen .logo{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 1.8rem;
+    text-align: center;
+    /* 去除 h1 的默认字体大小 */
+    font-size: 0;
+    user-select: none;
+    /* outline: 1px solid; */
+}
+
+#firstScreen .logo img{
+    height: 2.94rem;
+}
+
+/* posterMain 区域样式 */
+#posterMain{
+    width: 100%;
+    height: 4.2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#posterMain .playBtnContainer{
+    width: 3.56rem;
+    height: 0.76rem;
+    margin: 0 auto;
+    background: url('../assets/anniubeijing.png') no-repeat center center;
+    background-size: cover;
+    /* CSS3 新提供的属性，放大倍数，1代表1倍，小于1代表缩小，大于1代表放大 */
+    transform: scale(1.5);
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#posterMain .playBtnContainer .playBtn{
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 0;
+}
+
+#posterMain .playBtnContainer .playBtn:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.28rem;
+    height: 0.28rem;
+    /* 这个也是CSS3新增的，代表位移动 */
+    transform: translate(-50%,-50%);
+    background: url('../assets/bofanganniu.png') no-repeat;
+    background-size: 0.28rem auto;
+    background-position: center top;
+}
+
+
+/* 用到的背景图名字为 tiaokuanbeijing.png */
+
+/* 游戏下载容器区域 */
+
+#posterMain .downloadWrapper {
+    width: 5.34rem;
+    margin: 0 auto;
+    margin-bottom: 0.3rem;
+    /* outline: 1px solid; */
+} 
+
+/* 下载按钮组 */
+
+.downloadWrapper .btnGroup {
+    display: flex;
+    width: 100%;
+    height: 0.8rem;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.downloadWrapper .btnGroup>a {
+    display: inline-block;
+    width: 2.39rem;
+    height: 100%;
+}
+
+.downloadWrapper .btnGroup>a:first-child {
+    background: url('../assets/youxixiazai.png') center/contain no-repeat;
+}
+
+.downloadWrapper .btnGroup>a:last-child {
+    background: url('../assets/tapxiazai.png') center/contain no-repeat;
+}
+
+/* 开发者信息 */
+
+.downloadWrapper .txts p {
+    font-size: 0.22rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.06rem;
+    font-weight: 300;
+    background: url('../assets/tiaokuanbeijing.png') center/cover no-repeat;
+}
+
+.downloadWrapper .txts p span {
+    font-weight: 300;
+}
+
+.downloadWrapper .txts p a {
+    font-weight: 300;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.downloadWrapper .txts .txtsBlock {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* 适龄提示样式 */
+
+.posterNotice {
+    position: absolute;
+    width: .9rem;
+    left: .1rem;
+    top: .1rem;
+}
+
+.posterNotice img {
+    width: 100%;
+}
+
+
+/* 定义动画 */
+@keyframes myArrow{
+    0%{
+        opacity: .8;
+    }
+    50%{
+        opacity: .2;
+    }
+    100%{
+        opacity: .8;
+    }
+}
+
+
+/* 箭头容器 */
+
+.posterArrows {
+    position: absolute;
+    /* 因为宽是 0.25rem，所以 left 为 50% - 自身宽度的一半 */
+    left: calc(50% - 0.125rem);
+    width: 0.25rem;
+    height: 0.45rem;
+    /* outline: 1px solid; */
+}
+
+.arrow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.15rem;
+    background: url('../assets/arrow.png') center/cover no-repeat;
+    background-color: transparent;
+    /* 应用你的动画 */
+    animation: myArrow 1.5s linear infinite;
+}
+
+.arrow1 {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.arrow2 {
+    top: 0.12rem;
+    animation-delay: 0.5s;
+}
+
+.arrow3 {
+    top: 0.24rem;
+    animation-delay: 1s;
+}

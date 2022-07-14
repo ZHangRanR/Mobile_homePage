@@ -1,0 +1,152 @@
+/* 隐藏的 header 样式 */
+
+.container header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1.2rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container header img {
+    opacity: 0;
+}
+
+.container header button {
+    width: 0.92rem;
+    background: transparent url('../assets/hanbaoanniu.png') no-repeat center center;
+    background-size: 0.46rem auto;
+    border: 0;
+    font-size: 0;
+    margin-right: .35rem;
+}
+
+header.active {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+header.active img[alt=logo] {
+    opacity: 1;
+}
+
+/* 隐藏的弹出框样式 */
+
+/* 背后的遮罩层 */
+
+.headerMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    /* opacity: 0; */
+    transition: opacity 0.2s linear;
+}
+
+/* 遮罩层上面的白色菜单 */
+.headerMenu .menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 6rem;
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+}
+
+.headerMenu.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.headerMenu.active .menu {
+    transform: translateX(0);
+}
+
+/* 关闭按钮 */
+
+.menuClose {
+    display: inline-block;
+    width: 0.5rem;
+    height: 100%;
+    outline: none;
+    background: transparent url('../assets/closeBtn.png') no-repeat center center;
+    background-size: 0.5rem auto;
+    border: 0;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.headerMenu .menu>div {
+    padding-right: 0.6rem;
+    width: 100%;
+    height: 1.2rem;
+    background: #393b40;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.menuList {
+    display: block;
+    width: 100%;
+}
+
+.menuList a {
+    position: relative;
+    display: block;
+    padding-left: 0.7rem;
+    width: 100%;
+    line-height: 3.05;
+    min-height: 1.12rem;
+    font-size: 0.36rem;
+    text-decoration: none;
+    color: #393b40;
+    border-bottom: #f5f5f5 1px solid;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+}
+
+.menuList div {
+    padding-left: 0;
+}
+
+.menuList a.active::before, .menuList div.active::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 0.08rem;
+    height: 1.12rem;
+    background: #69e0ff;
+}
+
+.menuLoginbox>div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 0.8rem;
+}
+
+.menuLoginbox {
+    margin-top: 1.3rem;
+    height: 1.12rem;
+    font-size: 0.36rem;
+    color: #393b40;
+    background-color: #f5f5f5;
+}
+
+.menuLoginbox img {
+    display: block;
+    width: 0.44rem;
+    margin-right: 0.35rem;
+}

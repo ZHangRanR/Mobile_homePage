@@ -1,0 +1,224 @@
+/* 新闻样式 */
+
+#newsScreen {
+    position: relative;
+    width: 100%;
+    height: 13.35rem;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    background: url('../assets/newbgc.jpeg') no-repeat center/cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 标题样式 */
+
+#newsScreen>h3 {
+    position: relative;
+    margin: 0.75rem auto 0.35rem;
+    font-size: 0.42rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+#newsScreen>h3::before, #newsScreen>h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 2.7rem;
+    height: 0.14rem;
+    background: url('../assets/biaotijiantou.png') no-repeat right center/cover;
+}
+
+#newsScreen>h3::before {
+    left: 0;
+    transform: translate(calc(-100% - 0.15rem), -50%);
+}
+
+#newsScreen>h3::after {
+    right: 0;
+    transform: translate(calc(100% + 0.15rem), -50%) rotateY( 180deg);
+}
+
+/* 轮播图样式开始 */
+
+/* 容器样式 */
+.newsMain .swiperContainer {
+    position: relative;
+    width: 6.4rem;
+    margin: 0 auto;
+    outline: 1px solid;
+    outline: 0.03rem solid #fff;
+    box-sizing: border-box;
+    height: 4rem;
+    overflow: hidden;
+}
+
+/* ul 样式 */
+.swiperContainer .swiperWrapper {
+    width: 32rem;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+
+/* ul 下面的每一个 li */
+.swiperContainer .swiperWrapper li {
+    width: 6.4rem;
+    height: 100%;
+}
+
+.swiperContainer .swiperWrapper li:first-child {
+    background: url('../assets/swiperImg1.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiperContainer .swiperWrapper li:nth-child(2) {
+    background: url('../assets/swiperImg2.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiperContainer .swiperWrapper li:nth-child(3) {
+    background: url('../assets/swiperImg3.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiperContainer .swiperWrapper li:nth-child(4) {
+    background: url('../assets/swiperImg4.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.swiperDotsContainer {
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.swiperDotsItem {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: solid 2px rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    box-shadow: 0 0 12px 0 rgb(17 17 17 / 30%);
+    opacity: 1;
+    margin: 0 5px;
+}
+
+.swiperDotsItemActive {
+    background-color: #fff;
+    border: solid 2px #fff;
+}
+
+/* 轮播图样式结束 */
+
+/* 新闻里面的新闻样式开始 */
+
+.newsListContainer {
+    position: relative;
+    width: 6.4rem;
+    margin: 0 auto;
+}
+
+.newsTabList {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin: 0.35rem auto 0;
+    border-bottom: 0.03rem solid rgba(255, 255, 255, 0.1);
+}
+
+.newsTabItem {
+    position: relative;
+    padding: 0 0.15rem 0.1rem;
+    font-size: 0.32rem;
+    margin: 0 0.135rem;
+    text-align: center;
+}
+
+.newsTabItemActive {
+    color: #ffd49f;
+}
+
+.newsTabItemActive::after {
+    position: absolute;
+    left: 0;
+    bottom: -0.03rem;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 0.03rem;
+    background: #ffd49f;
+}
+
+.newsList {
+    width: 100%;
+    margin: 0 auto;
+    height: 4.6rem;
+    overflow: hidden;
+}
+
+.newsItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 0.92rem;
+    border-bottom: 0.02rem solid rgba(255, 255, 255, 0.08);
+    font-size: 0.24rem;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.newsTitle {
+    height: 0.92rem;
+    line-height: 0.92rem;
+    padding-left: 0.11rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.newsDate {
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.2rem;
+    height: 0.92rem;
+    line-height: 0.92rem;
+    margin: 0 0.11rem;
+}
+
+/* 新闻里面的新闻样式结束 */
+
+/* 更多资讯 */
+
+#newsScreen>.newsMore {
+    position: absolute;
+    left: 50%;
+    bottom: 1.09rem;
+    display: block;
+    width: 6.4rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    color: #ffd49f;
+    text-align: center;
+    background: rgba(255, 212, 159, 0.1);
+    border: rgba(255, 212, 159, 0.7) solid 0.02rem;
+    border-radius: 0.04rem;
+    transform: translateX(-50%);
+}
